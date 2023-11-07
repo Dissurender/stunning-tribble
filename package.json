@@ -1,0 +1,21 @@
+{
+  "name": "stunning-tribble",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dissurender/stunning-tribble.git"
+  },
+  "author": "Rhyn Ogg",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Dissurender/stunning-tribble/issues"
+  },
+  "homepage": "https://github.com/Dissurender/stunning-tribble#readme"
+}
