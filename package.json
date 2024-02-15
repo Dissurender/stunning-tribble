@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "dev": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,9 +13,12 @@
     "url": "git+https://github.com/Dissurender/stunning-tribble.git"
   },
   "author": "Rhyn Ogg",
-  "license": "GPL-3.0-or-later",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Dissurender/stunning-tribble/issues"
   },
-  "homepage": "https://github.com/Dissurender/stunning-tribble#readme"
+  "homepage": "https://github.com/Dissurender/stunning-tribble#readme",
+  "dependencies": {
+    "nodemon": "^3.0.3"
+  }
 }

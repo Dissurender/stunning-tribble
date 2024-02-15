@@ -1,12 +1,23 @@
-import { createServer } from "http";
-import { requestHandler } from "./handlers/requestHandler.js";
+import { Worker, isMainThread, parentPort } from "worker_threads";
 
-const port = 8800;
+if (isMainThread) {
+  const pool = [];
 
-const app = createServer();
+  const workerCount = 5;
+  for (let i = 0; i < workerCount; i++) {
+    pool.push(new Worker("./src/index.js"));
+  }
 
-app.on("request", requestHandler);
+  pool.forEach((worker, index) => {
+    worker.postMessage({ task: index });
+  });
 
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`);
-});
+} else {
+  parentPort.on("message", (message) => {
+    console.log(`Worker ${process.pid}: Recieved task ${message.task}`);
+
+    performTask(message.task);
+  });
+}
+
+function performTask(task) {}
